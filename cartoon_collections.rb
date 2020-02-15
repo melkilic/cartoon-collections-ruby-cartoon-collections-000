@@ -1,6 +1,6 @@
 def roll_call_dwarves(dwarves)
   counter = 0
-  dwarves.each_with_index do |element|
+   dwarves.split(dwarves.length/2).each_with_index do |element|
     puts "#{counter+1}.#{dwarves[counter]}"
   counter +=1
   end
@@ -21,12 +21,23 @@ end
 
 
 def find_the_cheese(our_array)
-  cheese_types = ["cheddar", "gouda", "camembert"]
+  cheese_types = ["cheddar", "gouda", "camembert", "Swiss cheese"]
     count = 0
-  if our_array.include?("cheddar" || "gouda" || "camembert")
+  if our_array.include?(cheese_types[count])
     return cheese_types[count]
   else
     return nil
     count += 1
   end
+end
+
+
+def starts_with_b(words)
+  arr = []
+  words.each {|word| if word[0] == "b"
+    arr << word
+  }
+  
+  arr
+  
 end
